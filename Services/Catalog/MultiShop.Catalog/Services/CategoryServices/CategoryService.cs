@@ -11,7 +11,7 @@ namespace MultiShop.Catalog.Services.CategoryServices
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;
 
-        // Constructor içerisinde mongodb veri tabanı bağlantımıza ait yapılandırmaları yaparız.Bu bağlantıya ait bilgiler appsettings içerisinde. Appsetting ile bağlantıyı sağlayacak olan "IDatabaseSettings" interface'ini kullanan "DatabaseSettings" ile veri tabanı bağlantımızı sağlarız. İlk önce "ConnectionString" ile veri tabanı bağlantımızı belirtiriz. Sonrasında "client" üzerinden veri tabanımıza geçeriz(DatabaseName). Sonrasında veri tabanında hangi koleksiyon doldurulacaksa onu belirtiriz. "Category" türünde "CategoryCollectionName" ismindeki yer.
+        // Constructor içerisinde mongodb veri tabanı bağlantımıza ait yapılandırmaları yaparız. Constructor da direkt appsettings e erişemeyiz. Bu bağlantıya ait bilgiler appsettings içerisinde. Appsetting ile bağlantıyı sağlayacak olan "IDatabaseSettings" interface'ini kullanan "DatabaseSettings" ile veri tabanı bağlantımızı sağlarız. İlk önce "ConnectionString" ile veri tabanı bağlantımızı belirtiriz. Sonrasında "client" üzerinden veri tabanımıza geçeriz(DatabaseName). Sonrasında veri tabanında hangi koleksiyon doldurulacaksa onu belirtiriz. "Category" türünde "CategoryCollectionName" ismindeki yer.
         public CategoryService(IMapper mapper, IDatabaseSettings _databaseSettings)
         {
             var client = new MongoClient(_databaseSettings.ConnectionString);
