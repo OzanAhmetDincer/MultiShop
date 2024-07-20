@@ -10,7 +10,7 @@ namespace MultiShop.Order.Persistence.Context
         public DbSet<Ordering> Orderings { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; database=MultiShopOrderDb; integrated security=true;");
+            optionsBuilder.UseSqlServer(@"Server=localhost,1440; database=MultiShopOrderDb;User=sa;Password=123456aA*");
         }
     }
 }
